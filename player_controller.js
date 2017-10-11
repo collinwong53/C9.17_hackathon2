@@ -16,9 +16,7 @@ function Player_controller(){
         player_model.completedMoves +=1;
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
         this.checkIfWinRound(player_model);
-        // if(game_model.roundStarted === false) {
-            this.getRequiredMove(player_model);
-        // }
+        this.getRequiredMove(player_model);
     };
     this.missMove = function(player_model){
         view.arrowBoxMissMove(player_model);
@@ -36,6 +34,7 @@ function Player_controller(){
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
         view.displayArrow(player_model.requiredMove, player_model)
+
     };
     this.resetCompletedMoves = function(player_model){
         player_model.completedMoves = 0;
@@ -49,7 +48,7 @@ function Player_controller(){
             this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
             this.takeDamage(game_model.players[otherPlayerIndex], player_model.attack);
             console.log("player " + otherPlayerIndex + " takes " + player_model.attack + " damage and is now at " + game_model.players[otherPlayerIndex].hp + " hp")
-            game_controller.endRound();
+            // game_controller.endRound();
             if(game_model.players[0].hp > 0 && game_model.players[1].hp > 0){
                 game_controller.startTimer(3000, false);
             }

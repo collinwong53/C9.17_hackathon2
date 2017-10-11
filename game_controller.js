@@ -31,9 +31,9 @@ function Game_controller(){
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };
-    this.endRound = function(){
-        game_model.roundStarted = false;
-    };
+    // this.endRound = function(){
+    //     game_model.roundStarted = false;
+    // };
 
     this.startTimer = function(time, startOfGame){       //Countdown that starts the round - triggered by button press
         if(startOfGame) {
@@ -42,7 +42,7 @@ function Game_controller(){
         }
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
-        view.displayCountdownNumber(game_model.timerValue/1000);
+
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
@@ -53,6 +53,7 @@ function Game_controller(){
                 this.clearInterval(game_model.timerInterval)
             }
         }, timeBetweenUpdates)
+        view.displayCountdownNumber(game_model.timerValue/1000);
     };
     // this.stopTimer = function(){
     //     clearInterval(game_model.timerInterval)
