@@ -272,8 +272,28 @@ background-color: whitesmoke;
     color: whitesmoke;
 }
 
-.hpAndPowerBar{
+.hpAndPowerBar {
+    margin-top: 3%;
+}
 
+#player_0_health_bar {
+    width: 100%;
+    background-color: green;
+}
+
+#player_0_power_bar{
+   width: 100%;
+    background-color: red;
+}
+
+#player_1_health_bar {
+    width: 100%;
+    background-color: green;
+}
+
+#player_1_power_bar {
+    width: 100%;
+    background-color: red;
 }
 
 
