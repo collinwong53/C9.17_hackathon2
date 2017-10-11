@@ -30,56 +30,56 @@ function Grab_data(){
         })//end call
         return promise;
     }//get get data
-    this.resolve_wiki = function(data,player){
-        var markup = data.parse.text["*"];
-        var i = $('<div></div>').html(markup);
-        // i[0].children[0].children[1].innerText;
-        // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
-        // i.find('sup').remove();
-        // i.find('.mw-ext-cite-error').remove();
-        // $(player).html($(i).find('p'));
-        $(player).html(i[0].children[0].children[1].innerText);
-    }
-    this.reject_wiki = function(data){
-        console.log('error');
-    }
-    this.get_wiki = function(name,player){
-        // var promise ={
-        //     then:function(resolve,reject){
-        //         this.resolve = resolve;
-        //         this.reject = reject;
-        //     }
-        // }
-        $.ajax({
-            url: "https://en.wikipedia.org/w/api.php",
-            data: {
-                format: "json",
-                action: "parse",
-                page: name,
-                prop:"text",
-                section:0,
-                origin:'*'
-            },
-            dataType: 'jsonp',
-            success: function (data) {
-                var markup = data.parse.text["*"];
-                var i = $('<div></div>').html(markup);
-                // i[0].children[0].children[1].innerText;
-                // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
-                // i.find('sup').remove();
-                // i.find('.mw-ext-cite-error').remove();
-                // $(player).html($(i).find('p'));
-                $(player).html(i[0].children[0].children[1].innerText);
-                // console.log(data)
-                // promise.resolve(data,player);
-            },
-            error: function(data){
-                // promise.reject(data)
-                console.log('error')
-            }
-        });
-        // return promise;
-    }
+    // this.resolve_wiki = function(data,player){
+    //     var markup = data.parse.text["*"];
+    //     var i = $('<div></div>').html(markup);
+    //     // i[0].children[0].children[1].innerText;
+    //     // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
+    //     // i.find('sup').remove();
+    //     // i.find('.mw-ext-cite-error').remove();
+    //     // $(player).html($(i).find('p'));
+    //     $(player).html(i[0].children[0].children[1].innerText);
+    // }
+    // this.reject_wiki = function(data){
+    //     console.log('error');
+    // }
+    // this.get_wiki = function(name,player){
+    //     // var promise ={
+    //     //     then:function(resolve,reject){
+    //     //         this.resolve = resolve;
+    //     //         this.reject = reject;
+    //     //     }
+    //     // }
+    //     $.ajax({
+    //         url: "https://en.wikipedia.org/w/api.php",
+    //         data: {
+    //             format: "json",
+    //             action: "parse",
+    //             page: name,
+    //             prop:"text",
+    //             section:0,
+    //             origin:'*'
+    //         },
+    //         dataType: 'jsonp',
+    //         success: function (data) {
+    //             var markup = data.parse.text["*"];
+    //             var i = $('<div></div>').html(markup);
+    //             // i[0].children[0].children[1].innerText;
+    //             // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
+    //             // i.find('sup').remove();
+    //             // i.find('.mw-ext-cite-error').remove();
+    //             // $(player).html($(i).find('p'));
+    //             $(player).html(i[0].children[0].children[1].innerText);
+    //             // console.log(data)
+    //             // promise.resolve(data,player);
+    //         },
+    //         error: function(data){
+    //             // promise.reject(data)
+    //             console.log('error')
+    //         }
+    //     });
+    //     // return promise;
+    // }
     this.random_number_gen = function(end_num){
         var number = Math.floor(Math.random()*end_num+1)
         return number;
