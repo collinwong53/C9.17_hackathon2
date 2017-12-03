@@ -27,7 +27,7 @@ function Game_controller(){
      * @param  (winnerPlayerModel) - player model of the winner
      */
     this.endGame = function(winnerPlayerModel){
-        get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
+        view.get_youtube_data(winnerPlayerModel.pokemon.name).then(view.winner_video, view.failed_video);
         // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         view.backgroundImage();
         $("#start_button").show();
