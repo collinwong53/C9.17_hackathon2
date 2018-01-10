@@ -19,8 +19,8 @@ function View(){
         var back_image2 = $('<div>').addClass('back').css('background-image',"url('images/card_back.png')");
         var player0BackgroundImage = game_model.players[0].pokemon.image;
         var player1BackgroundImage = game_model.players[1].pokemon.image;
-        var player_0_front = $('<div>').addClass('front').css('background-image',"url(" + player0BackgroundImage + ")");
-        var player_1_front = $('<div>').addClass('front').css('background-image',"url(" + player1BackgroundImage + ")");
+        var player_0_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player0BackgroundImage + "'" + '/>');
+        var player_1_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player1BackgroundImage + "'" + '/>');
         var player_0_card = $('<div>').addClass('card').append(player_0_front,back_image1);
         var player_1_card = $('<div>').addClass('card').append(player_1_front,back_image2);
         $("#player_0").html(player_0_card);

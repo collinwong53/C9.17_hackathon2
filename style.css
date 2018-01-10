@@ -32,14 +32,14 @@ ul{
 .player_name {
     font-family: manaspc, Arial;
     color: whitesmoke;
-    font-size: 1.25em;
+    font-size: .8em;
     text-align: center;
     display:flex;
     justify-content: center;
     align-items: center;
     top: 1%;
     position: absolute;
-    height: 5%;
+    height: 6%;
     width: 25%;
     transform: translate(-50%, -50%);
     background-size: contain;
@@ -53,7 +53,6 @@ ul{
 #player_1 {
     left: 70%;
 }
-
 
 .player_box {
     top: 40%;
@@ -355,6 +354,10 @@ ul{
     transition: 1s;
     transform-style: preserve-3d;
 }
+.card img{
+    height:100%;
+    width:100%;
+}
 .front, .back{
     border-radius:11px;
     height:100%;
@@ -364,10 +367,10 @@ ul{
     background-repeat: no-repeat;
     background-size:cover;
 }
+
 .flipped{
     transform: rotateY(180deg);
 }
-
 
 .scrollbar {
     background-color: dimgrey;
@@ -405,12 +408,11 @@ ul{
 }
 #mute
 {
-    font-size: 70px;
+    bottom:5%;
+    font-size: 40px;
     color: aliceblue;
     position:absolute;
-    left: 50%;
-    top: 75%;
-    transform:translate(-50%, -50%);
+    left:5%;
 }
 .hidden{
     display:none;
